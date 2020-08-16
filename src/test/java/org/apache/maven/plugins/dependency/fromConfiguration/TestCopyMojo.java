@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static org.junit.Assume.assumeTrue;
+
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.artifact.versioning.VersionRange;
 import org.apache.maven.execution.MavenSession;
@@ -68,6 +70,10 @@ public class TestCopyMojo
             mojo.getProcessedArtifactItems( new ProcessArtifactItemsRequest( removeVersion, false, useBaseVersion,
                                                                              false ) );
         return list.get( 0 );
+    }
+
+    public void testProofClaim() {
+        assumeTrue("always skip", false);
     }
 
     public void testSetArtifactWithoutPackaging()
